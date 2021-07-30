@@ -13,6 +13,11 @@ const LoginScreen = ({ handleLogin }) => {
     password === "12345" ? handleLogin() : setError("Invalid Password!");
   }
 
+  const handleClose = () => {
+    window.open("about:blank", "_self");
+    window.close();
+  }
+
   return (
     <div className = "login-container">
       <div>
@@ -25,7 +30,7 @@ const LoginScreen = ({ handleLogin }) => {
         <input className = "password" type = "password" placeholder = "Password" value = {password} onChange = {handlePassword} />
       </div>
       <div className = "buttons">
-        <input className = "close" type = "button" value = "Close" />
+        <input className = "close" type = "button" value = "Close" onClick = {handleClose} />
         <input className = "submit" type = "button" value = "Submit" onClick = {handleSubmit} />
       </div>
     </div>
