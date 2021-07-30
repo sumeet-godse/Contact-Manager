@@ -37,8 +37,8 @@ const DisplaySelectedRecord = (props) => {
           </>
         }
         <div className = "modify-records">
-          <input className = "modify-button" type = "button" value = "Add" onClick = {handleAddFlag} />
-          <input className = "modify-button" type = "button" value = "Edit" onClick = {handleEditFlag} />
+          <input className = "add" type = "button" value = "Add" onClick = {handleAddFlag} />
+          <input className = "edit" type = "button" value = "Edit" onClick = {handleEditFlag} />
         </div>
       </div>
       { addFlag && <AddData handleAddFlag = {handleAddFlag} />}
