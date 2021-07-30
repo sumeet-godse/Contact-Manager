@@ -7,12 +7,13 @@ import EditData from "./EditData";
 
 const DisplaySelectedRecord = (props) => {
   const [records, setRecords] = useState(getRecords());
-  const { selectedRecord } = props;
+  const { handleNewFlag, selectedRecord } = props;
   const [ addFlag, setAddFlag ] = useState(false);
   const [ editFlag, setEditFlag ] = useState(false);
 
   const handleAddFlag = () => {
     setAddFlag(!addFlag);
+    handleNewFlag();
   }
 
   const handleEditFlag = () => {
