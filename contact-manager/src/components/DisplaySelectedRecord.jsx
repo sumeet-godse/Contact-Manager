@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import "../styles/DisplayData.css"
-import getRecords from "../utilities/utility";
+import decryptLoad from "../utilities/decryptLoad";
 import AddData from "./AddData";
 import EditData from "./EditData";
 
 const DisplaySelectedRecord = (props) => {
-  const [records, setRecords] = useState(getRecords());
+  const [records, setRecords] = useState(decryptLoad("encryptedRecords"));
   const { handleNewFlag, selectedRecord } = props;
   const [ addFlag, setAddFlag ] = useState(false);
   const [ editFlag, setEditFlag ] = useState(false);
@@ -21,7 +21,7 @@ const DisplaySelectedRecord = (props) => {
   }
 
   useEffect(() => {
-    setRecords(getRecords());
+    setRecords(decryptLoad("encryptedRecords"));
   }, [addFlag, editFlag]);
 
   return(

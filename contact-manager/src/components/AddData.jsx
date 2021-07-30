@@ -1,12 +1,13 @@
 import { useState } from "react";
-import getRecords from "../utilities/utility";
 import "../styles/EditData.css";
+import encryptStore from "../utilities/encryptStore";
+import decryptLoad from "../utilities/decryptLoad";
 
 const AddData = (props) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [records, setRecords] = useState(getRecords());
+  const [records, setRecords] = useState(decryptLoad("encryptedRecords"));
 
   const handleAdd = () => {
     records.push({
@@ -15,7 +16,7 @@ const AddData = (props) => {
       address
     })
     setRecords(records);
-    localStorage.setItem("records", JSON.stringify(records));
+    encryptStore(records);
     props.handleAddFlag();
   }
 

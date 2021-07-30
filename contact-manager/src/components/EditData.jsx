@@ -1,9 +1,10 @@
 import { useState } from "react";
-import getRecords from "../utilities/utility";
 import "../styles/EditData.css";
+import encryptStore from "../utilities/encryptStore";
+import decryptLoad from "../utilities/decryptLoad";
 
 const EditData = ({ handleEditFlag, index }) => {
-  const [records, setRecords] = useState(getRecords());
+  const [records, setRecords] = useState(decryptLoad("encryptedRecords"));
   const [phone, setPhone] = useState(records[index].phone);
   const [email, setEmail] = useState(records[index].email);
   const [address, setAddress] = useState(records[index].address);
@@ -13,7 +14,7 @@ const EditData = ({ handleEditFlag, index }) => {
     records[index].email = email;
     records[index].address = address;
     setRecords(records);
-    localStorage.setItem("records", JSON.stringify(records));
+    encryptStore(records);
     handleEditFlag();
   }
 

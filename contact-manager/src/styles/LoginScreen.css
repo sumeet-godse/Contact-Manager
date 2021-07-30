@@ -5,8 +5,6 @@
   height: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .password {
@@ -14,12 +12,60 @@
   height: 50px;
 }
 
+.welcome {
+  text-align: center;
+  font-size: 24px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 80px;
+}
+
+.prompt {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 24px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+}
+
 .close {
   height: 40px;
   width: 100px;
+  border: none;
+  background-color: #e53935;
+  color: white;
+  transition-duration: 0.5s;
+  border-radius: 8px;
+}
+
+.close:hover {
+  background-color: #b71c1c;
 }
 
 .submit {
   height: 40px;
   width: 100px;
+  background-color: #388e3c;
+  color: white;
+  transition-duration: 0.5s;
+  border-radius: 8px;
+  border: none;
+}
+
+.submit:hover {
+  background-color: #1b5e20;
+}
+
+.password-container {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
