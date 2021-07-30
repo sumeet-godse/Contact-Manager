@@ -35,16 +35,16 @@ const AddData = (props) => {
   return(
     <div className = "edit-block">
       <div className = "edit-popup">
-        <div>
+        <div className = "common">
           <input onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>
-        <div>
+        <div className = "common">
           <input onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
         </div>
-        <div>
-          <input onChange = {(e) => handleAddress(e)} type = "text" placeholder = "Address" value = {address} />
+        <div className = "common">
+          <textarea rows = "4" onChange = {(e) => handleAddress(e)} placeholder = "Address" value = {address} />
         </div>
-        <div>
+        <div className = "common">
           <input onClick = {handleAdd} type = "button" value = "Submit" />
         </div>
       </div>

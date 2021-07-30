@@ -10,12 +10,12 @@ const EditData = ({ handleEditFlag, index }) => {
   const [address, setAddress] = useState(records[index].address);
 
   const handleEdit = () => {
-    records[index].phone = phone;
-    records[index].email = email;
-    records[index].address = address;
-    setRecords(records);
-    encryptStore(records);
-    handleEditFlag();
+      records[index].phone = phone;
+      records[index].email = email;
+      records[index].address = address;
+      setRecords(records);
+      encryptStore(records);
+      handleEditFlag();
   }
 
   const handlePhone = (e) => {
@@ -33,16 +33,16 @@ const EditData = ({ handleEditFlag, index }) => {
   return(
     <div className = "edit-block">
       <div className = "edit-popup">
-        <div>
+        <div className = "common">
           <input onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>
-        <div>
+        <div className = "common">
           <input onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
         </div>
-        <div>
-          <input onChange = {(e) => handleAddress(e)} type = "text" placeholder = "Address" value = {address} />
+        <div className = "common">
+          <textarea rows = "4" onChange = {(e) => handleAddress(e)} type = "text" placeholder = "Address" value = {address} />
         </div>
-        <div>
+        <div className = "common">
           <input onClick = {handleEdit} type = "button" value = "Submit" />
         </div>
       </div>
