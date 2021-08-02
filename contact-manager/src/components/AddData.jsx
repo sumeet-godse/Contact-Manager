@@ -33,19 +33,19 @@ const AddData = (props) => {
   }
 
   return(
-    <div className = "edit-block">
-      <div className = "edit-popup">
-        <div className = "common">
-          <input onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
+    <div id = "add-block" className = "edit-block">
+      <div id = "add-popup" className = "edit-popup">
+        <div id = "add-data-phone" className = "common">
+          <input id = "add-phone-input" onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>
-        <div className = "common">
-          <input onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
+        <div id = "add-data-email" className = "common">
+          <input id = "add-email-input" onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
         </div>
-        <div className = "common">
-          <textarea rows = "4" onChange = {(e) => handleAddress(e)} placeholder = "Address" value = {address} />
+        <div id = "add-data-address" className = "common">
+          <textarea id = "add-address-input" rows = "4" onChange = {(e) => handleAddress(e)} placeholder = "Address" value = {address} />
         </div>
-        <div className = "common">
-          <input onClick = {handleAdd} type = "button" value = "Submit" />
+        <div id = "add-data-button" className = "common">
+          <input id = "add-button-input" onClick = {handleAdd} type = "button" value = "Submit" />
         </div>
       </div>
     </div>

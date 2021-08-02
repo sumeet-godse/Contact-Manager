@@ -2,7 +2,7 @@ import Home from "./container/Home";
 
 const App = () => {
   return (
-    <div>
+    <div id = "app-container">
       <Home />
     </div>
   );

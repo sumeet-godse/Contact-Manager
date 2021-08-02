@@ -25,20 +25,20 @@ const DisplaySelectedRecord = (props) => {
   }, [addFlag, editFlag]);
 
   return(
-    <div>
-      <div className = "display-record-data">
+    <div id = "display-selected-record">
+      <div id = "display-record-data" className = "display-record-data">
         {
           records.length &&
           <>
-            <h3>Contact {selectedRecord + 1}</h3>
-            <h4>Phone: {records[selectedRecord].phone}</h4>
-            <h4>Email: {records[selectedRecord].email}</h4>
-            <h4>Address: {records[selectedRecord].address}</h4>
+            <h3 id = "selected-record-contact">Contact {selectedRecord + 1}</h3>
+            <h4 id = "selected-record-phone">Phone: {records[selectedRecord].phone}</h4>
+            <h4 id = "selected-record-email">Email: {records[selectedRecord].email}</h4>
+            <h4 id = "selected-record-address">Address: {records[selectedRecord].address}</h4>
           </>
         }
-        <div className = "modify-records">
-          <input className = "add" type = "button" value = "Add" onClick = {handleAddFlag} />
-          <input className = "edit" type = "button" value = "Edit" onClick = {handleEditFlag} />
+        <div id = "modify-records" className = "modify-records">
+          <input id = "add-record" className = "add" type = "button" value = "Add" onClick = {handleAddFlag} />
+          <input id = "edit-record" className = "edit" type = "button" value = "Edit" onClick = {handleEditFlag} />
         </div>
       </div>
       { addFlag && <AddData handleAddFlag = {handleAddFlag} />}

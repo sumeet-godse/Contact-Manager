@@ -17,12 +17,12 @@ const DisplayData = () => {
   }
 
   return(
-    <div className = "display-data-container">
-      <div className = "display-data-labels">
+    <div id = "display-container" className = "display-data-container">
+      <div id = "display-labels" className = "display-data-labels">
         {
           records.map((record, index) => {
             return(
-              <div className = "label" key = {`${record.email}_${record.phone}`} onClick = {() => handleRecordChange(index)}>
+              <div className = "label" id = {`${record.email}_${record.phone}`} key = {`${record.email}_${record.phone}`} onClick = {() => handleRecordChange(index)}>
                 Contact {index + 1}
               </div>
             )

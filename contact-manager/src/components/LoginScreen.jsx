@@ -18,18 +18,18 @@ const LoginScreen = ({ handleLogin }) => {
   }
 
   return (
-    <div className = "login-container">
-      <div className = "welcome">
+    <div id = "login-container" className = "login-container">
+      <div id = "login-text-welcome" className = "welcome">
         Welcome to <br />Simple Secure Contact Manager!
       </div>
-      <div className = "prompt">
+      <div id = "login-text-prompt" className = "prompt">
         Please enter the password for your contact data file
       </div>
-      <div className = "password-container">
+      <div id = "password-container" className = "password-container">
         <input className = "password" type = "password" placeholder = "Password" value = {password} onChange = {handlePassword} />
       </div>
       <p style = {{textAlign: "center", color: "red"}} id = "errorPassword" />
-      <div className = "buttons">
+      <div id = "buttons" className = "buttons">
           <input className = "close" type = "button" value = "Close" onClick = {handleClose} />
           <input className = "submit" type = "button" value = "OK" onClick = {handleSubmit} />
       </div>

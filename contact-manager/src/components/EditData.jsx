@@ -31,19 +31,19 @@ const EditData = ({ handleEditFlag, index }) => {
   }
 
   return(
-    <div className = "edit-block">
-      <div className = "edit-popup">
-        <div className = "common">
-          <input onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
+    <div id = "edit-block" className = "edit-block">
+      <div id = "edit-popup" className = "edit-popup">
+        <div id = "edit-data-phone" className = "common">
+          <input id = "edit-phone-input" onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>
-        <div className = "common">
-          <input onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
+        <div id = "edit-data-email" className = "common">
+          <input id = "edit-email-input" onChange = {(e) => handleEmail(e)} type = "text" placeholder = "Email" value = {email} />
         </div>
-        <div className = "common">
-          <textarea rows = "4" onChange = {(e) => handleAddress(e)} type = "text" placeholder = "Address" value = {address} />
+        <div id = "edit-data-address" className = "common">
+          <textarea id = "edit-address-input" rows = "4" onChange = {(e) => handleAddress(e)} type = "text" placeholder = "Address" value = {address} />
         </div>
-        <div className = "common">
-          <input onClick = {handleEdit} type = "button" value = "Submit" />
+        <div id = "edit-data-submit" className = "common">
+          <input id = "edit-submit-input" onClick = {handleEdit} type = "button" value = "Submit" />
         </div>
       </div>
     </div>

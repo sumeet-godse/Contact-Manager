@@ -10,7 +10,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div id = "home-page">
       { !isLoggedIn && <LoginScreen handleLogin = {handleLogin} /> }
       { isLoggedIn && <DisplayData /> }
     </div>
