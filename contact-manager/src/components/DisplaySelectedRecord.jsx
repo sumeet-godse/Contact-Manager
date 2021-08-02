@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "../styles/DisplayData.css"
+import "../styles/DisplayData.css";
+import "../styles/SelectedRecord.css";
 import AddData from "./AddData";
 import EditData from "./EditData";
 
@@ -33,12 +34,23 @@ const DisplaySelectedRecord = (props) => {
           selectedRecord ?
           <>
             <div id = "selected-record-contact">
-              Contact {index + 1}
+              <b>Contact {index + 1}</b>
               <input type = "button" value = "Delete" className = "delete" onClick = {handleDelete} />
             </div>
-            <h4 id = "selected-record-phone">Phone: {selectedRecord.phone}</h4>
-            <h4 id = "selected-record-email">Email: {selectedRecord.email}</h4>
-            <h4 id = "selected-record-address">Address: {selectedRecord.address}</h4>
+            <div id = "selected-record-phone" className = "selected-record-phone">
+              <b>Phone:</b> {selectedRecord.phone}
+            </div>
+            <div id = "selected-record-email" className = "selected-record-email">
+            <b>Email:</b> {selectedRecord.email}
+            </div>
+            <div id = "selected-record-address" className = "selected-record-address">
+              <div>
+              <b>Address:</b>
+              </div> 
+              <div>
+              {selectedRecord.address}
+              </div>
+            </div>
           </>
           : null
         }
