@@ -2,18 +2,33 @@ import "../styles/DisplayData.css"
 import DisplaySelectedRecord from "./DisplaySelectedRecord";
 import { useState } from "react";
 import decryptLoad from "../utilities/decryptLoad";
+import encryptStore from "../utilities/encryptStore";
 
 const DisplayData = () => {
-  let records = decryptLoad("encryptedRecords");
-  const [selectedRecord, setSelectedRecord] = useState(0);
+  const [records, setRecords] = useState(decryptLoad("encryptedRecords"));
+  const [selectedRecord, setSelectedRecord] = useState("");
   const [newFlag, setNewFlag] = useState(false);
+  const [index, setIndex] = useState(-1);
+
+  const handleRecordEdit = () => {
+    setRecords(decryptLoad("encryptedRecords"));
+  }
 
   const handleRecordChange = (index) => {
-    setSelectedRecord(index);
+    setSelectedRecord(records[index]);
+    setIndex(index);
   }
 
   const handleNewFlag = () => {
     setNewFlag(!newFlag);
+    setRecords(decryptLoad("encryptedRecords"));
+  }
+
+  const handleDelete = () => {
+    records.splice(index, 1);
+    setRecords(records);
+    setSelectedRecord(records[index - 1]);
+    encryptStore(records);
   }
 
   return(
@@ -29,7 +44,7 @@ const DisplayData = () => {
           })
         }
       </div>
-      <DisplaySelectedRecord handleNewFlag = {handleNewFlag} selectedRecord = {selectedRecord} />
+      <DisplaySelectedRecord handleDelete = {handleDelete} handleRecordEdit = {() => handleRecordEdit()} handleNewFlag = {handleNewFlag} selectedRecord = {selectedRecord} index = {index} />
     </div>
   );
 }

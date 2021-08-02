@@ -70,7 +70,7 @@ const EditData = ({ handleEditFlag, index, handleEditClose }) => {
           <p id = "edit-address-error" />
         </div>
         <div id = "edit-data-submit" className = "common">
-          <input id = "edit-submit-input" onClick = {handleEdit} type = "button" value = "Submit" />
+          <input id = "edit-submit-input" onClick = {() => handleEdit()} type = "button" value = "Submit" />
         </div>
       </div>
     </div>

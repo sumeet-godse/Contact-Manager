@@ -40,7 +40,7 @@
 }
 
 .add {
-  background-color: #e53935;
+  background-color: #388e3c;
   color: white;
   border: none;
   width: 100px;
@@ -50,7 +50,7 @@
 }
 
 .add:hover {
-  background-color: #b71c1c;
+  background-color: #1b5e20;
   color: white;
 }
 
@@ -71,4 +71,19 @@
 
 .common {
   padding: 20px;
+}
+
+.delete {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  width: 70px;
+  height: 20px;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+  float: right;
+}
+
+.delete:hover {
+  background-color: #b71c1c;
 }
