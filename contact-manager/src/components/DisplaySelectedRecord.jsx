@@ -20,6 +20,14 @@ const DisplaySelectedRecord = (props) => {
     setEditFlag(!editFlag);
   }
 
+  const handleAddClose = () => {
+    setAddFlag(!addFlag);
+  }
+
+  const handleEditClose = () => {
+    setEditFlag(!editFlag);
+  }
+
   useEffect(() => {
     setRecords(decryptLoad("encryptedRecords"));
   }, [addFlag, editFlag]);
@@ -41,8 +49,8 @@ const DisplaySelectedRecord = (props) => {
           <input id = "edit-record" className = "edit" type = "button" value = "Edit" onClick = {handleEditFlag} />
         </div>
       </div>
-      { addFlag && <AddData handleAddFlag = {handleAddFlag} />}
-      { editFlag && <EditData handleEditFlag = {handleEditFlag} index = {selectedRecord} />}
+      { addFlag && <AddData handleAddFlag = {handleAddFlag} handleAddClose = {handleAddClose} />}
+      { editFlag && <EditData handleEditFlag = {handleEditFlag} index = {selectedRecord} handleEditClose = {handleEditClose} />}
     </div>
   );
 }

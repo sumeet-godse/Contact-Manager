@@ -3,7 +3,7 @@ import "../styles/EditData.css";
 import encryptStore from "../utilities/encryptStore";
 import decryptLoad from "../utilities/decryptLoad";
 
-const EditData = ({ handleEditFlag, index }) => {
+const EditData = ({ handleEditFlag, index, handleEditClose }) => {
   const [records, setRecords] = useState(decryptLoad("encryptedRecords"));
   const [phone, setPhone] = useState(records[index].phone);
   const [email, setEmail] = useState(records[index].email);
@@ -33,6 +33,9 @@ const EditData = ({ handleEditFlag, index }) => {
   return(
     <div id = "edit-block" className = "edit-block">
       <div id = "edit-popup" className = "edit-popup">
+        <span id = "close-icon" className="close-icon" onClick = {handleEditClose}>
+          x
+        </span>
         <div id = "edit-data-phone" className = "common">
           <input id = "edit-phone-input" onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>

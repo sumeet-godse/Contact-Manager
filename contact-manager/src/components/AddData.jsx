@@ -35,6 +35,9 @@ const AddData = (props) => {
   return(
     <div id = "add-block" className = "edit-block">
       <div id = "add-popup" className = "edit-popup">
+        <span id = "close-icon" className="close-icon" onClick = {props.handleAddClose}>
+          x
+        </span>
         <div id = "add-data-phone" className = "common">
           <input id = "add-phone-input" onChange = {(e) => handlePhone(e)} type = "text" placeholder = "Phone" value = {phone} />
         </div>

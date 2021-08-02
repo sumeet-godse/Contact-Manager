@@ -30,7 +30,7 @@
   content: 'x';
   cursor: pointer;
   position: fixed;
-  right: calc(35% - 10px);
+  right: calc(25% - 10px);
   top: calc(100vh - 85vh - 10px);
   background: #ef5350;
   width: 25px;
